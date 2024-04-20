@@ -11,7 +11,7 @@ function App() {
   const containerWidth = 'max-w-6xl';
 
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="relative min-h-screen bg-gray-50 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={background} alt="" className="w-full" />
