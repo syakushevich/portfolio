@@ -4,7 +4,7 @@ import knight from '../images/knight_iii.png';
 import back from '../images/knight_back.png';
 import mask from '../images/knight_bg_4.png';
 import '../styles/vintageImageOverlay.css';
-import '../styles/AboutPage.css';
+import '../styles/about.css';
 
 function AboutPage() {
   return (

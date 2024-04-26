@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import VintageImageOverlay from '../components/VintageImageOverlay';
 
 import alien from '../images/alien.jpg';
 import noise from '../images/noise.gif';
-// import regateLogo from '../images/regate_logo.jpg';
 
+import '../styles/project.css';
 import '../styles/imageWithBlur.css';
 import '../styles/vintageImageOverlay.css';
 
 function ContentBlock() {
+  const [activeTech, setActiveTech] = useState('');
+  const [detail, setDetail] = useState('Select a technology to see details.');
+
+  const technologies = [
+    [
+      { name: 'Ruby', description: "I utilized Ruby on Rails for backend development, focusing on integrating APIs and building performance-oriented code. This powerful framework allowed for rapid development and clean, maintainable code that effectively handles complex business logic and data transactions." },
+      { name: 'RSpec', description: "For testing, I employed RSpec, using it extensively for both acceptance and integration tests. I ensured reliable mocking of external API calls with cassettes, which facilitated consistent test environments and streamlined our testing process by reproducing predictable and controlled responses." },
+      { name: 'React', description: "In the frontend, React was my go-to for building responsive and dynamic user interfaces. Alongside component development, I also maintained Cypress tests to ensure that the components behaved as expected across updates, enhancing the robustness and reliability of the UI." }
+    ],
+    [
+      { name: 'Postgresql', description: "With PostgreSQL, I designed new tables and updated existing ones to optimize performance and scalability. I implemented constraints and indices to enforce data integrity and improve query efficiency, which significantly enhanced the database's responsiveness and reliability." },
+      { name: 'Docker', description: "Docker was instrumental in containerizing the application, database, and frontend, which simplified our development and deployment processes. By using Docker, we achieved a consistent environment across different stages of development, reducing the 'it works on my machine' issues significantly." },
+      { name: 'Kubernetes', description: "For deployment and management, I utilized Kubernetes, which streamlined deploying updates and managing application staging and production environments. Kubernetes provided the tools necessary for efficient scaling, self-healing, and load balancing, thereby enhancing our operational capabilities." }
+    ]
+  ]
+
+  const handleTechClick = (techName) => {
+      setActiveTech(techName);
+  };
+
+  const updateDetails = (tech) => {
+    setActiveTech(tech.name);
+    setDetail(tech.description);
+  };
+
   return (
     <div>
       <div className="flex flex-row justify-between items-center w-[var(--content-width)] max-w-full relative">
@@ -36,50 +61,43 @@ function ContentBlock() {
         </div>
       </div>
 
-      <div>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto py-12 lg:max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">Technologies</h2>
+          <ul className="flex justify-between pb-2">
+            {technologies[0].map(tech => (
+              <li key={tech.name} className="li-tech cursor-pointer pb-4" onClick={() => handleTechClick(tech.name)}>
+                <a className={`items-center pl-5 pt-12 pb-3 space-y-2 tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
+                  <i className={`devicon-${tech.name.toLowerCase()}-plain text-5xl`}></i>
+                  <br />
+                  <span className="tech-span-wrapper">
+                    <span className="tech-span">{tech.name}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex justify-between">
+            {technologies[1].map(tech => (
+              <li key={tech.name} className="li-tech cursor-pointer pb-4" onClick={() => handleTechClick(tech.name)}>
+                <a className={`items-center pl-5 pt-12 pb-2 space-y-2 tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
+                  <i className={`devicon-${tech.name.toLowerCase()}-plain text-5xl`}></i>
+                  <br />
+                  <span className="tech-span-wrapper">
+                    <span className="tech-span">{tech.name}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specs</h2>
-            <p className="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
-
-            <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Origin</dt>
-                <dd className="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
-              </div>
-
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Material</dt>
-                <dd className="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder coated steel card cover</dd>
-              </div>
-
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Dimensions</dt>
-                <dd className="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
-              </div>
-
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Finish</dt>
-                <dd className="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
-              </div>
-
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Includes</dt>
-                <dd className="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
-              </div>
-
-              <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Considerations</dt>
-                <dd className="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with each item.</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." className="rounded-lg bg-gray-100"></img>
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." className="rounded-lg bg-gray-100"></img>
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." className="rounded-lg bg-gray-100"></img>
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." className="rounded-lg bg-gray-100"></img>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Details</h2>
+            <p className="mt-4 text-gray-500">
+              {detail}
+            </p>
           </div>
         </div>
       </div>

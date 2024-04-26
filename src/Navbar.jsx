@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/navbar.css';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
@@ -10,7 +11,7 @@ function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "text-black hover:bg-white hover:text-gray-900 rounded-md px-3 py-2"}`
+                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "px-3 py-2 text-black hover:bg-black rounded-md hover:text-white plain-hover"}`
               }>
               Home
             </NavLink>
@@ -19,7 +20,7 @@ function Navbar() {
             <NavLink
               to="/projects"
               className={({ isActive }) =>
-                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "text-black hover:bg-white hover:text-gray-900 rounded-md px-3 py-2"}`
+                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2 magic-active" : "px-3 py-2 magic-hover"}`
               }>
               Projects
             </NavLink>
@@ -28,7 +29,7 @@ function Navbar() {
             <NavLink
               to="/hire-me"
               className={({ isActive }) =>
-                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "text-black hover:bg-white hover:text-gray-900 rounded-md px-3 py-2"}`
+                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "px-3 py-2 text-black hover:bg-black rounded-md hover:text-white plain-hover"}`
               }>
               Hire me
             </NavLink>
@@ -37,7 +38,7 @@ function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "text-black hover:bg-white hover:text-gray-900 rounded-md px-3 py-2"}`
+                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2" : "px-3 py-2 text-black hover:bg-black rounded-md hover:text-white plain-hover"}`
               }>
               About
             </NavLink>

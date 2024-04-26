@@ -1,6 +1,6 @@
 import React from 'react';
 import VintageImageOverlay from '../components/VintageImageOverlay';
-import image from '../images/hug_gif.gif';
+import image from '../images/mount.jpg';
 
 function HireMeBlock() {
   return (
