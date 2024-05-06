@@ -9,7 +9,7 @@ function ColorImage({ image }) {
 
   return (
     <div ref={imgContainerRef} className="w-[340px] h-[340px] flex items-center justify-center relative mt-12 mb-12">
-      <img src={image} alt="Blurred Background" className="" style={{ filter: 'grayscale(100%) blur(8px)' }}  />
+      <img src={image} alt="Blurred Background" className="h-full object-cover" style={{ filter: 'grayscale(100%) blur(15px)' }}  />
       {/* Grayscale image always visible */}
       <img
         src={image}

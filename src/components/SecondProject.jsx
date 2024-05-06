@@ -40,21 +40,21 @@ const SecondProject = () => {
       <div className="mx-auto py-12 lg:max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">Technologies</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-10">Technologies</h2>
             <ul className="flex justify-between pb-24">
               {technologies[0].map(tech => (
                <li key={tech.name} data-text={tech.name} className="li-tech cursor-pointer" onClick={() => updateDetails(tech)}>
-                 <a className={`items-center space-y-2 tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
+                 <a className={`items-center tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
                    <i className={`devicon-${tech.name.toLowerCase()}-plain text-6xl`}></i>
                    <span data-text={tech.name}></span>
                  </a>
                </li>
               ))}
             </ul>
-            <ul className="flex justify-between pb-24">
+            <ul className="flex justify-between">
               {technologies[1].map(tech => (
                <li key={tech.name} data-text={tech.name} className="li-tech cursor-pointer" onClick={() => updateDetails(tech)}>
-                 <a className={`items-center space-y-2 tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
+                 <a className={`items-center tech-icon ${activeTech === tech.name ? 'tech-active' : ''}`}>
                    <i className={`devicon-${tech.name.toLowerCase()}-plain text-6xl`}></i>
                    <span data-text={tech.name}></span>
                  </a>
@@ -64,7 +64,7 @@ const SecondProject = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Details</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Details</h2>
             <p className="mt-4 text-gray-500">
               {detail}
             </p>
