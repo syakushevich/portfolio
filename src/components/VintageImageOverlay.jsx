@@ -11,7 +11,7 @@ const VintageImageOverlay = ({ image, noise }) => {
         />
         <img
           src={image}
-          alt="Cover Image"
+          alt="Cover"
           className="cover"
         />
         <img

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import VintageImageOverlay from '../components/VintageImageOverlay';
 import FirstProject from '../components/FirstProject';

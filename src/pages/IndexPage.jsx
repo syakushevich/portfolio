@@ -1,10 +1,10 @@
 import React from 'react';
-import useXRayEffect from '../components/useXRayEffect';
+import XRayEffect from '../components/XRayEffect';
 import IndexImage from '../components/IndexImage';
 import vikings from '../images/vikings.jpg';
 
 function IndexBlock() {
-  const { imgRef, maskRef } = useXRayEffect();
+  const { imgRef, maskRef } = XRayEffect();
 
   return (
     <div className="container mx-auto text-black rubik-font">

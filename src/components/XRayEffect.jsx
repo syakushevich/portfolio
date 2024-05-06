@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-const useXRayEffect = () => {
+const XRayEffect = () => {
   const imgRef = useRef(null);
   const maskRef = useRef(null);
 
@@ -41,4 +41,4 @@ const useXRayEffect = () => {
   return { imgRef, maskRef };
 };
 
-export default useXRayEffect;
+export default XRayEffect;

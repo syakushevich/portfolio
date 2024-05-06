@@ -4,10 +4,6 @@ const FirstProject = () => {
   const [activeTech, setActiveTech] = useState('');
   const [detail, setDetail] = useState('Select a technology to see details.');
 
-  const handleTechClick = (techName) => {
-    setActiveTech(techName);
-  };
-
   const updateDetails = (tech) => {
     setActiveTech(tech.name);
     setDetail(tech.description);
