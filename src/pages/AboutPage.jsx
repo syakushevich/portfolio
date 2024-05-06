@@ -1,10 +1,6 @@
 import React from 'react';
-import AboutImage from '../components/AboutImage';
-import knight from '../images/knight_iii.png';
-import back from '../images/knight_back.png';
-import mask from '../images/knight_bg_4.png';
-import '../styles/vintageImageOverlay.css';
-import '../styles/about.css';
+import ColorImage from '../components/ColorImage';
+import lab from '../images/lab.jpg';
 
 function AboutPage() {
   return (
@@ -13,12 +9,29 @@ function AboutPage() {
         <div className="font-bold w-[340px]">
           <h1 className="custom-h1">About</h1>
         </div>
-        <AboutImage image={knight} mask={mask} back={back} />
+        <ColorImage image={lab} />
       </div>
 
-      <p className="mt-4 text-lg custom-text">
-        I'm excited at the prospect of bringing my skills and approach to your team. If you're looking for someone dedicated to creating outstanding software solutions and nurturing emerging talent in the tech field, please feel free to reach out. I'm eager to explore how we can work together for mutual success.
-      </p>
+      {/* Additional information about sources and links */}
+      <div className="mt-6">
+
+        <p className="mt-2 text-lg custom-text">
+          The visual effects on this page were inspired by resources found at
+          {' '}<a href="https://codepen.io/Hyperplexed" className="text-blue-500 hover:text-blue-700">CodePen by Hyperplexed</a>
+          . Discover more cool stuff there!
+        </p>
+        <p className="mt-2 text-lg custom-text">
+          Illustrations on this site were beautifully created by:
+          {' '}<a href="https://www.behance.net/Dextermaurer" className="text-blue-500 hover:text-blue-700">Dexter Maurer</a>
+          {' '}and
+          {' '}<a href="https://www.behance.net/KatyaDo" className="text-blue-500 hover:text-blue-700">Katya Dorokhina</a>.
+        </p>
+        <p className="mt-2 text-lg custom-text">
+          This site was styled using
+          {' '}<a href="https://tailwindcss.com" className="text-blue-500 hover:text-blue-700">Tailwind CSS</a>,
+          an utility-first CSS framework for rapid UI development.
+        </p>
+      </div>
     </div>
   );
 }

@@ -25,12 +25,12 @@
 .magic-hover:hover {
   position: relative;
   z-index: 1;
-  animation: background-pan 3s linear infinite;
+  animation: background-pan 4s linear infinite;
   background: linear-gradient(
     to right,
     white,
-    rgb(244, 143, 177),
-    rgb(103, 58, 183),
+    #f2d1eb,
+    #c8e6fa,
     white
   );
   background-size: 200%;
@@ -41,12 +41,12 @@
 .magic-active, .magic-hover:hover {
   position: relative;
   z-index: 1;
-  animation: background-pan 3s linear infinite;
+  animation: background-pan 4s linear infinite;
   background: linear-gradient(
     to right,
     white,
-    rgb(244, 143, 177),
-    rgb(103, 58, 183),
+    #f2d1eb,
+    #c8e6fa,
     white
   );
   background-size: 200%;

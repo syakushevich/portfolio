@@ -5,36 +5,36 @@ const useXRayEffect = () => {
   const maskRef = useRef(null);
 
   useEffect(() => {
-    const imgElement = imgRef.current;
-    const maskElement = maskRef.current;
+    const image = imgRef.current;
+    const mask = maskRef.current;
 
     const handleMouseMove = (event) => {
-      const rect = imgElement.getBoundingClientRect();
+      const rect = image.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
       const maskSize = 100; // Assuming the mask is 100x100 pixels
 
-      maskElement.style.left = `${x - maskSize / 2}px`;
-      maskElement.style.top = `${y - maskSize / 2}px`;
+      mask.style.left = `${x - maskSize / 2}px`;
+      mask.style.top = `${y - maskSize / 2}px`;
     };
 
     const showMask = () => {
-      maskElement.style.display = 'block';
+      mask.style.display = 'block';
     };
 
     const hideMask = () => {
-      maskElement.style.display = 'none';
+      mask.style.display = 'none';
     };
 
-    imgElement.addEventListener('mousemove', handleMouseMove);
-    imgElement.addEventListener('mouseenter', showMask);
-    imgElement.addEventListener('mouseleave', hideMask);
+    image.addEventListener('mousemove', handleMouseMove);
+    image.addEventListener('mouseenter', showMask);
+    image.addEventListener('mouseleave', hideMask);
 
     // Clean up
     return () => {
-      imgElement.removeEventListener('mousemove', handleMouseMove);
-      imgElement.removeEventListener('mouseenter', showMask);
-      imgElement.removeEventListener('mouseleave', hideMask);
+      image.removeEventListener('mousemove', handleMouseMove);
+      image.removeEventListener('mouseenter', showMask);
+      image.removeEventListener('mouseleave', hideMask);
     };
   }, []);
 

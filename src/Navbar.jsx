@@ -20,7 +20,7 @@ function Navbar() {
             <NavLink
               to="/projects"
               className={({ isActive }) =>
-                `nav-text ${isActive ? "bg-black text-white rounded-md px-3 py-2 magic-active" : "px-3 py-2 magic-hover"}`
+                `nav-text ${isActive ? "rounded-md px-3 py-2 magic-active" : "px-3 py-2 magic-hover"}`
               }>
               Projects
             </NavLink>
