@@ -1,4 +1,4 @@
-```
+
 # Portfolio Application
 
 This is a React-based portfolio application, showcasing projects and technologies used. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -15,7 +15,6 @@ To get started with this project, you first need to clone the repository. Open y
 ```bash
 git clone https://github.com/<your-username>/portfolio.git
 cd portfolio
-```
 
 Replace `<your-username>` with your GitHub username.
 
